@@ -46,5 +46,5 @@ enable_checkpoint = true
 [policy.parallelism]
 tp_size = 1
 cp_size = 1
-dp_shard_size = 4
+dp_shard_size = 1
 pp_size = 1

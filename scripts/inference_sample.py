@@ -84,7 +84,10 @@ def main():
                     "type": "video",
                     "video": f"{ROOT}/assets/sample.mp4",
                 },
-                {"type": "text", "text": "Caption the video in detail."},
+                {
+                    "type": "text", 
+                    "text": "Caption the video in detail."
+                },
             ],
         },
     ]

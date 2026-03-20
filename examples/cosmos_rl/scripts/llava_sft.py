@@ -119,6 +119,9 @@ class CustomDataset(torch.utils.data.Dataset):
 
 
 if __name__ == "__main__":
+    print('\n\n')
+    print('HERE 1')
+    print('\n\n')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--config", type=str, required=True, help="Path to config file."
@@ -134,6 +137,10 @@ if __name__ == "__main__":
         config.policy.model_max_length * PIXELS_PER_TOKEN * 0.9
     )
 
+    print('\n\n')
+    print('HERE 2')
+    print('\n\n')
+
     # Log
     role = os.environ.get("COSMOS_ROLE")
     is_controller = role == "Controller"
@@ -148,6 +155,10 @@ if __name__ == "__main__":
         config_path.write_text(toml.dumps(config_kwargs))
         logger.info(f"Saved config to {config_path}")
 
+    print('\n\n')
+    print('HERE 3')
+    print('\n\n')
+
     # Load dataset
     dataset = CustomDataset(
         config=config,
@@ -157,6 +168,9 @@ if __name__ == "__main__":
     dataset[0]
 
     # Launch worker
+    print('\n\n')
+    print('HERE 4')
+    print('\n\n')
     cosmos_rl.launcher.worker_entry.main(
         dataset=dataset,
     )
